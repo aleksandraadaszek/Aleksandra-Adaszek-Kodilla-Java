@@ -71,30 +71,10 @@ public class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        List<Double> retrievedForecast = weatherForecast.calculateAverageTemperature();
+        Double retrievedForecast = weatherForecast.calculateAverageTemperature();
 
         //Then
         Assertions.assertEquals(23.775,retrievedForecast);
-    }
-    @Test
-    //Test sprawdzający czy liczba pomiarów temperatury przekazana przez mock jest taka sama jak ta pobrana z klasy WeatherForecast
-    void testInputNumber () {
-        //Given
-        Map<String, Double> theInput = new HashMap<>();
-        theInput.put("Busko-Zdrój", 34.4);
-        theInput.put("Malbork", 38.9);
-        theInput.put("Łódź", 29.9);
-        theInput.put("Katowice", 27.8);
-        theInput.put("Warszawa", 31.2);
-        theInput.put("Bydgoszcz", 34.5);
-        when(temperaturesMock.getTemperatures()).thenReturn(theInput);
-        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-
-        //When
-        int theInputSize = weatherForecast.calculateAverageTemperature().size();
-
-        //Then
-        Assertions.assertEquals(6,theInputSize);
     }
 
     @Test

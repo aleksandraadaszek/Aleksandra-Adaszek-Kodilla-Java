@@ -18,7 +18,7 @@ public class WeatherForecast {
         return resultMap;
 
     }
-        public List<Double> calculateAverageTemperature() {
+        public Double calculateAverageTemperature() {
          Map<String, Double> collectedTemperatures = new HashMap<>();
         double sum = 0.00;
 
@@ -27,11 +27,9 @@ public class WeatherForecast {
             collectedTemperatures.put(knownTemperatures.getKey(), knownTemperatures.getValue());
             sum = sum + knownTemperatures.getValue();
         }
-        double average = sum/collectedTemperatures.size();
+        Double average = sum/collectedTemperatures.size();
         System.out.println(average);
-        List<Double> finalList = new ArrayList<>();
-        finalList.add(average);
-         return finalList;
+         return average;
      }
 
     public double medianFinder () {

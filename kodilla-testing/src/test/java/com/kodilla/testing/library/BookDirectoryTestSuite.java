@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.BeforeEach;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Book Directory Test Suite")
@@ -21,7 +22,7 @@ public class BookDirectoryTestSuite {
 
     @BeforeAll
     public static void beforeAllTests() {
-        System.out.println("This is the beginning of all tests")
+        System.out.println("This is the beginning of all tests");
     }
 
     @AfterAll
@@ -123,11 +124,11 @@ public class BookDirectoryTestSuite {
             //Given
             BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
             List<Book> currentListOfBooks = new ArrayList<>();
-            LibraryUser John = new LibraryUser("John", "Smith", "9004237623");
-            when(libraryDatabaseMock.listBooksInHandsOf(John)).thenReturn(currentListOfBooks);
+            LibraryUser john = new LibraryUser("John", "Smith", "9004237623");
+            when(libraryDatabaseMock.listBooksInHandsOf(john)).thenReturn(currentListOfBooks);
 
             //When
-            List<Book> actualListOfRentedBooks = bookLibrary.listBooksInHandsOf(John);
+            List<Book> actualListOfRentedBooks = bookLibrary.listBooksInHandsOf(john);
 
             //Then
             assertEquals(0, actualListOfRentedBooks.size());
@@ -139,13 +140,13 @@ public class BookDirectoryTestSuite {
             //Given
             BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
             List<Book> presentListOfBooks = new ArrayList<>();
-            LibraryUser Mary = new LibraryUser("Marianne", "Lecksthold", "8706170624");
+            LibraryUser mary = new LibraryUser("Marianne", "Lecksthold", "8706170624");
             Book rentedBook = new Book("Around the world on foot", "Isabelle Simons", 2014);
             presentListOfBooks.add(rentedBook);
-            when(libraryDatabaseMock.listBooksInHandsOf(Mary)).thenReturn(presentListOfBooks);
+            when(libraryDatabaseMock.listBooksInHandsOf(mary)).thenReturn(presentListOfBooks);
 
             //When
-            List<Book> listOfRentedBooks = bookLibrary.listBooksInHandsOf(Mary);
+            List<Book> listOfRentedBooks = bookLibrary.listBooksInHandsOf(mary);
 
             //Then
             assertEquals(1, listOfRentedBooks.size());
@@ -158,11 +159,11 @@ public class BookDirectoryTestSuite {
             //Given
             BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
             List<Book> presentlyRented5Books = generateListOfBooks(5);
-            LibraryUser Patrick = new LibraryUser("Patrick", "Swanson", "8309234323");
-            when(libraryDatabaseMock.listBooksInHandsOf(Patrick)).thenReturn(presentlyRented5Books);
+            LibraryUser patrick = new LibraryUser("Patrick", "Swanson", "8309234323");
+            when(libraryDatabaseMock.listBooksInHandsOf(patrick)).thenReturn(presentlyRented5Books);
 
             //When
-            List<Book> currentlyRented5Books = bookLibrary.listBooksInHandsOf(Patrick);
+            List<Book> currentlyRented5Books = bookLibrary.listBooksInHandsOf(patrick);
 
             //Then
             assertEquals(5, currentlyRented5Books.size());
