@@ -13,13 +13,13 @@ public class WeatherForecast {
 
         for(Map.Entry<String, Double> temperature: temperatures.getTemperatures().entrySet()) {
 
-        resultMap.put(temperature.getKey(), temperature.getValue() +1.0);
+            resultMap.put(temperature.getKey(), temperature.getValue() +1.0);
         }
         return resultMap;
 
     }
-        public Double calculateAverageTemperature() {
-         Map<String, Double> collectedTemperatures = new HashMap<>();
+    public Double calculateAverageTemperature() {
+        Map<String, Double> collectedTemperatures = new HashMap<>();
         double sum = 0.00;
 
         for(Map.Entry<String, Double> knownTemperatures: temperatures.getTemperatures().entrySet()) {
@@ -29,8 +29,8 @@ public class WeatherForecast {
         }
         Double average = sum/collectedTemperatures.size();
         System.out.println(average);
-         return average;
-     }
+        return average;
+    }
 
     public double medianFinder () {
         Map<String, Double> forecastData = new HashMap<>();
@@ -51,5 +51,5 @@ public class WeatherForecast {
         }
         return median;
     }
-    }
+}
 

@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+@DisplayName("Collection Test Suite")
 public class CollectionTestSuite {
-
-    @DisplayName("Collection Test Suite")
-
-    public class ShapeCollectorTestSuite {
+    
 
         private static int testCounter = 0;
 
@@ -63,4 +62,4 @@ public class CollectionTestSuite {
 
         }
     }
-}
+
