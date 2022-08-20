@@ -19,7 +19,7 @@ public class CollectionTestSuite {
         }
 
         @AfterAll
-        public void afterAllTests() {
+        public static void afterAllTests() {
             System.out.println("All tests are finished.");
         }
 
