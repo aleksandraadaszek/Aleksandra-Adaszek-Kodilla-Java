@@ -31,7 +31,7 @@ public class BookDirectoryTestSuite {
     }
 
     @BeforeEach
-    public static void beforeEachTest() {
+    public void beforeEachTest() {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
@@ -83,13 +83,13 @@ public class BookDirectoryTestSuite {
             List<Book> resultListOf15Books = generateListOfBooks(15);
             List<Book> resultListOf40Books = generateListOfBooks(40);
             when(libraryDatabaseMock.listBooksWithCondition(anyString())).thenReturn(resultListOf15Books);
-            when(libraryDatabaseMock.listBooksWithCondition("Zero books")).thenReturn(resultListOf15Books);
+            when(libraryDatabaseMock.listBooksWithCondition("Zero books")).thenReturn(resultListOf0Books);
             when(libraryDatabaseMock.listBooksWithCondition("Forty books")).thenReturn(resultListOf40Books);
 
             //When
             List<Book> theListOfBooks0 = bookLibrary.listBooksWithCondition("Zero books");
             List<Book> theListOfBooks15 = bookLibrary.listBooksWithCondition("Any title");
-            List<Book> theListOfBooks40 = bookLibrary.listBooksWithCondition("Forty Books");
+            List<Book> theListOfBooks40 = bookLibrary.listBooksWithCondition("Forty books");
 
             //Then
             assertEquals(0, theListOfBooks0.size());

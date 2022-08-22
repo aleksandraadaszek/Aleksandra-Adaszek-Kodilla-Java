@@ -43,7 +43,7 @@ import java.util.List;
             shapeCollector.addShape(shape);
 
             //Then
-            Assertions.assertEquals(1, shapeCollector.getShapes(0).size());
+            Assertions.assertEquals(1, shapeCollector.shapesCount());
         }
 
         @Test
@@ -55,7 +55,7 @@ import java.util.List;
             shapeCollector.addShape(circle);
 
             //When
-            List<Shape> retrievedCircle;
+            Shape retrievedCircle;
             retrievedCircle = shapeCollector.getShapes(0);
 
             //Then

@@ -31,7 +31,7 @@ public class WeatherForecastTestSuite {
     }
 
     @BeforeEach
-    public static void beforeEachTest() {
+    public void beforeEachTest() {
         testCounter ++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
@@ -95,6 +95,6 @@ public class WeatherForecastTestSuite {
         double retrievedMedian = weatherForecast.medianFinder();
 
         //Then
-        Assertions.assertEquals(42.55,retrievedMedian);
+        Assertions.assertEquals(28.45,retrievedMedian);
     }
 }

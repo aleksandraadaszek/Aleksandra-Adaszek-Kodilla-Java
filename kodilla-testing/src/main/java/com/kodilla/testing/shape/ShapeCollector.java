@@ -9,9 +9,9 @@ public class ShapeCollector {
         shapes.add(shape);
     }
 
-    public List<Shape> getShapes (int shapeNumber) {
+    public Shape getShapes (int shapeNumber) {
 
-        return (List<Shape>) shapes.get (shapeNumber);
+        return shapes.get(shapeNumber);
     }
 
     public int shapesCount() {
