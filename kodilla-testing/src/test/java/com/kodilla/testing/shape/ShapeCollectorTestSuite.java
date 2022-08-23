@@ -56,7 +56,7 @@ import java.util.List;
 
             //When
             Shape retrievedCircle;
-            retrievedCircle = shapeCollector.getShapes(0);
+            retrievedCircle = shapeCollector.getShape(0);
 
             //Then
             Assertions.assertEquals(circle, retrievedCircle);
@@ -97,7 +97,7 @@ import java.util.List;
             shapeCollector.removeShape(square1);
 
             //Then
-            Assertions.assertEquals(circle1, shapeCollector.getShapes(0));
+            Assertions.assertEquals(circle1, shapeCollector.getShape(0));
         }
 
         @Test

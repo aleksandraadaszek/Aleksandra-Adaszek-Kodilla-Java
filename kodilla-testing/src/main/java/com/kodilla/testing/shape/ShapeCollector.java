@@ -9,7 +9,7 @@ public class ShapeCollector {
         shapes.add(shape);
     }
 
-    public Shape getShapes (int shapeNumber) {
+    public Shape getShape (int shapeNumber) {
 
         return shapes.get(shapeNumber);
     }

@@ -9,9 +9,9 @@ public class OddNumbersExterminator {
 
     public List<Integer> exterminate(List<Integer> numbers) {
         List<Integer> resultList = new ArrayList<>();
-        for (Integer finalNumbers : numbers)
-            if (finalNumbers % 2 == 0) {
-                resultList.add(finalNumbers);
+        for (Integer finalNumber : numbers)
+            if (finalNumber % 2 == 0) {
+                resultList.add(finalNumber);
             }
         return resultList;
     }

@@ -44,10 +44,10 @@ public class WeatherForecast {
         Collections.sort(medianNumbers);
         double median;
         if(medianNumbers.size() % 2 == 0) {
-            double sumOfMiddleElements = (double) (medianNumbers.get(medianNumbers.size() / 2) + medianNumbers.get(medianNumbers.size() / 2 - 1));
-            median = (double) sumOfMiddleElements / 2;
+            double sumOfMiddleElements = (medianNumbers.get(medianNumbers.size() / 2) + medianNumbers.get(medianNumbers.size() / 2 - 1));
+            median = sumOfMiddleElements / 2;
         } else {
-            median = (double) (medianNumbers.get(medianNumbers.size() + 1)/2);
+            median = (medianNumbers.get(medianNumbers.size() + 1)/2);
         }
         return median;
     }
