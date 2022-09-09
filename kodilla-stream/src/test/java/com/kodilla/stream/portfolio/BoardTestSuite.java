@@ -5,8 +5,11 @@ import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,7 +25,7 @@ public class BoardTestSuite {
         //When
 
         //Then
-        assertEquals(3,project.getTaskLists().size());
+        assertEquals(3, project.getTaskLists().size());
     }
 
     @Test
@@ -31,11 +34,8 @@ public class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        User user  = new User ("developer1", "John Smith");
-        List<Task> tasks = project.getTaskLists().stream()
-                .flatMap(l -> l.getTasks().stream())
-                .filter(t -> t.getAssignedUser().equals(user))
-                .collect(toList());
+        User user = new User("developer1", "John Smith");
+        List<Task> tasks = project.getTaskLists().stream().flatMap(l -> l.getTasks().stream()).filter(t -> t.getAssignedUser().equals(user)).collect(toList());
 
         //Then
         assertEquals(2, tasks.size());
@@ -49,14 +49,10 @@ public class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        List<TaskList>undoneTasks = new ArrayList<>();
+        List<TaskList> undoneTasks = new ArrayList<>();
         undoneTasks.add(new TaskList("To do"));
         undoneTasks.add(new TaskList("In progress"));
-        List<Task> tasks = project.getTaskLists().stream()
-                .filter(undoneTasks::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .filter(t -> t.getDeadline().isBefore(LocalDate.now()))
-                .collect(toList());
+        List<Task> tasks = project.getTaskLists().stream().filter(undoneTasks::contains).flatMap(tl -> tl.getTasks().stream()).filter(t -> t.getDeadline().isBefore(LocalDate.now())).collect(toList());
 
         //Then
         assertEquals(1, tasks.size());
@@ -75,9 +71,7 @@ public class BoardTestSuite {
         long longTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(Task::getCreated)
-                .filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <=0)
-                .count();
+                .map(Task::getCreated).filter(d -> d.compareTo(LocalDate.now().minusDays(10)) <= 0).count();
 
         //Then
         assertEquals(2, longTasks);
@@ -85,27 +79,59 @@ public class BoardTestSuite {
 
     }
 
+    @Test
+    void testAddTaskListAverageWorkingOnTask() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> tasksInProgress = new ArrayList<>();
+        tasksInProgress.add(new TaskList("In progress"));
+        long tasksUnderwayTotalDays = project.getTaskLists().stream()
+                .filter(tasksInProgress::contains)
+                .flatMap(t -> t.getTasks().stream())
+                .mapToLong(days -> ChronoUnit.DAYS.between(days.getCreated(), LocalDate.now()))
+                        .sum();
+        System.out.println(tasksUnderwayTotalDays);
+
+        long numberOfTasks = project.getTaskLists().stream()
+                .filter(tasksInProgress::contains)
+                .flatMap(t -> t.getTasks().stream())
+                .map(n -> 1)
+                .count();
+
+        long average = tasksUnderwayTotalDays / numberOfTasks;
+
+        //Then
+        assertEquals(30, tasksUnderwayTotalDays);
+        assertEquals(10, average);
+    }
+
+
+
+
+
     private Board prepareTestData() {
         //users
         User user1 = new User("developer1", "John Smith");
-        User user2 = new User ("projectmanager1","Nina White");
-        User user3 = new User ("developer2", "Emilia Stephanson");
-        User user4 = new User ("developer3", "Konrad Bridge");
+        User user2 = new User("projectmanager1", "Nina White");
+        User user3 = new User("developer2", "Emilia Stephanson");
+        User user4 = new User("developer3", "Konrad Bridge");
 
         //tasks
-        Task task1 = new Task ("Microservice for taking temperature", "Write and test the microservice\n" +
-                                    "the temperature from external service", user1, user2, LocalDate.now().minusDays(20),
-                                    LocalDate.now().plusDays(30));
-        Task task2 = new Task ("HQLs for analysis", "Prepare some HQL queries for analysis", user1, user2,
-                                LocalDate.now().minusDays(20), LocalDate.now().minusDays(5));
-        Task task3 = new Task ("Temperatures entity", "Prepare entity for temperatures",user2, user3,
-                                LocalDate.now().minusDays(20),LocalDate.now().plusDays(15));
-        Task task4 = new Task ("Own logger", "Refactor company logger to meet our needs", user2, user3,
-                                LocalDate.now().minusDays(10), LocalDate.now().plusDays(25));
-        Task task5 = new Task ("Optimaze searching", "Archive data searching has to be optimized", user2, user4,
-                                LocalDate.now(), LocalDate.now().plusDays(5));
-        Task task6 = new Task ("Use Streams", "Use Streams rather than for-loops for predictions", user2, user4,
-                                LocalDate.now().minusDays(15), LocalDate.now().minusDays(2));
+        Task task1 = new Task("Microservice for taking temperature", "Write and test the microservice\n" +
+                        "the temperature from external service", user1, user2, LocalDate.now().minusDays(20),
+                        LocalDate.now().plusDays(30));
+        Task task2 = new Task("HQLs for analysis", "Prepare some HQL queries for analysis", user1, user2,
+                    LocalDate.now().minusDays(20), LocalDate.now().minusDays(5));
+        Task task3 = new Task("Temperatures entity", "Prepare entity for temperatures", user2, user3,
+                    LocalDate.now().minusDays(20), LocalDate.now().plusDays(15));
+        Task task4 = new Task("Own logger", "Refactor company logger to meet our needs", user2, user3,
+                    LocalDate.now().minusDays(10), LocalDate.now().plusDays(25));
+        Task task5 = new Task("Optimaze searching", "Archive data searching has to be optimized", user2, user4,
+                    LocalDate.now(), LocalDate.now().plusDays(5));
+        Task task6 = new Task("Use Streams", "Use Streams rather than for-loops for predictions", user2, user4,
+                    LocalDate.now().minusDays(15), LocalDate.now().minusDays(2));
 
         //taskLists
         TaskList taskListToDo = new TaskList("To do");
@@ -125,4 +151,5 @@ public class BoardTestSuite {
         project.addTaskList(taskListDone);
         return project;
     }
+
 }
