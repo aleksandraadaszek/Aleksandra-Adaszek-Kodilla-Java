@@ -21,7 +21,7 @@ public class FirstChallenge {
         }catch (ArithmeticException e){
             System.out.println("There is a problem and this is " + e);
         }finally{
-            System.out.println("That was the # " + tryCounter + "attempt to divide");
+            System.out.println("That was the # " + tryCounter + "attempt to divide.");
         }
 
     }
