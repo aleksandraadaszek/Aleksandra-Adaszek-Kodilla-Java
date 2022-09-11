@@ -69,6 +69,7 @@ public class ForumStatisticsTestSuite {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         when(statisticsMock.postsCount()).thenReturn(0);
+        when(statisticsMock.commentsCount()).thenReturn(0);
 
         //When
         forumStatistics.calculateAdvancedStatistics(statisticsMock);
@@ -87,6 +88,7 @@ public class ForumStatisticsTestSuite {
         //Given
         ForumStatistics forumStatistics = new ForumStatistics();
         when(statisticsMock.commentsCount()).thenReturn(0);
+        when(statisticsMock.postsCount()).thenReturn(30);
 
         //When
         forumStatistics.calculateAdvancedStatistics(statisticsMock);
