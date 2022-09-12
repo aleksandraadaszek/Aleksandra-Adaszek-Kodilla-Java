@@ -61,7 +61,7 @@ public class ForumStatisticsTestSuite {
         assertEquals(17, forumStatistics.getNumberOfComments());
         assertEquals(0, forumStatistics.getAverageNumberOfPostsPerUser());
         assertEquals(0, forumStatistics.getAverageNumberOfCommentsPerUser());
-        assertEquals(0.56, forumStatistics.getAverageNumberOfCommentsPerPost());
+        assertEquals(0.566, forumStatistics.getAverageNumberOfCommentsPerPost(), 0.001);
     }
 
     @Test
@@ -115,8 +115,8 @@ public class ForumStatisticsTestSuite {
         assertEquals(6, forumStatistics.getNumberOfUsers());
         assertEquals(1000, forumStatistics.getNumberOfPosts());
         assertEquals(17, forumStatistics.getNumberOfComments());
-        assertEquals(166.66, forumStatistics.getAverageNumberOfPostsPerUser());
-        assertEquals(2.83, forumStatistics.getAverageNumberOfCommentsPerUser());
+        assertEquals(166.666, forumStatistics.getAverageNumberOfPostsPerUser(), 0.001);
+        assertEquals(2.833, forumStatistics.getAverageNumberOfCommentsPerUser(), 0.001);
         assertEquals(0.017, forumStatistics.getAverageNumberOfCommentsPerPost());
     }
 
@@ -134,7 +134,7 @@ public class ForumStatisticsTestSuite {
         assertEquals(6, forumStatistics.getNumberOfUsers());
         assertEquals(100, forumStatistics.getNumberOfPosts());
         assertEquals(120, forumStatistics.getNumberOfComments());
-        assertEquals(16.66, forumStatistics.getAverageNumberOfPostsPerUser());
+        assertEquals(16.666, forumStatistics.getAverageNumberOfPostsPerUser(), 0.001);
         assertEquals(20, forumStatistics.getAverageNumberOfCommentsPerUser());
         assertEquals(1.2, forumStatistics.getAverageNumberOfCommentsPerPost());
     }
@@ -178,6 +178,6 @@ public class ForumStatisticsTestSuite {
         assertEquals(17, forumStatistics.getNumberOfComments());
         assertEquals(0.3, forumStatistics.getAverageNumberOfPostsPerUser());
         assertEquals(0.17, forumStatistics.getAverageNumberOfCommentsPerUser());
-        assertEquals(0.56, forumStatistics.getAverageNumberOfCommentsPerPost());
+        assertEquals(0.566, forumStatistics.getAverageNumberOfCommentsPerPost(), 0.001);
     }
 }

@@ -30,7 +30,7 @@ public class FlightFinder {
 
         Map<String, Boolean> availableFlights = new HashMap<>();
 
-        Set<String> allKeys = allFlights.keySet();
+
 
         for (Map.Entry<String, Boolean> flights : allFlights.entrySet()) {
             if (allFlights.containsKey(allKeys)) {
