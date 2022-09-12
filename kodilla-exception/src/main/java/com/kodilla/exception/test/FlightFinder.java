@@ -3,6 +3,7 @@ package com.kodilla.exception.test;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class FlightFinder {
 
@@ -29,14 +30,18 @@ public class FlightFinder {
 
         Map<String, Boolean> availableFlights = new HashMap<>();
 
+        Set<String> allKeys = allFlights.keySet();
+
         for (Map.Entry<String, Boolean> flights : allFlights.entrySet()) {
-            if (flights.getValue() == true) {
+            if (allFlights.containsKey(allKeys)) {
+                allFlights.get(flights.getValue());
                 availableFlights.put(flights.getKey(), flights.getValue());
             } else {
                 throw new RouteNotFoundException();
             }
+            }
+            return availableFlights;
         }
-        return availableFlights;
     }
-}
+
 

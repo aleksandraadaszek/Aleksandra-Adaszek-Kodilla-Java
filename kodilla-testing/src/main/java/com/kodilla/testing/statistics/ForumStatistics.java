@@ -20,7 +20,7 @@ public class ForumStatistics {
      if(numberOfUsers != 0) {
          averageNumberOfPostsPerUser = numberOfPosts/ numberOfUsers;
      }else{
-         averageNumberOfCommentsPerUser = 0;
+         averageNumberOfPostsPerUser = 0;
      }
      if(numberOfUsers != 0) {
          averageNumberOfCommentsPerUser = numberOfComments / numberOfUsers;
