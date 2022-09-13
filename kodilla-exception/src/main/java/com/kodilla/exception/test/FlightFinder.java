@@ -28,13 +28,13 @@ public class FlightFinder {
         allFlights.put("Sao Paulo-Guarulhos", false);
 
 
+
         Map<String, Boolean> availableFlights = new HashMap<>();
 
-
-
         for (Map.Entry<String, Boolean> flights : allFlights.entrySet()) {
-            if (allFlights.containsKey(allKeys)) {
-                allFlights.get(flights.getValue());
+            String city = flight.getArrivalAirport();
+            if (allFlights.containsKey(city)) {
+                allFlights.get(city);
                 availableFlights.put(flights.getKey(), flights.getValue());
             } else {
                 throw new RouteNotFoundException();
