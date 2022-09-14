@@ -1,9 +1,9 @@
 package com.kodilla.exception.test;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import static javax.swing.UIManager.get;
 
 public class FlightFinder {
 
@@ -18,7 +18,7 @@ public class FlightFinder {
     }
 
 
-    public Map<String, Boolean> findFlight(Flight flight) throws RouteNotFoundException {
+    public boolean findFlight(Flight flight) throws RouteNotFoundException {
         Map<String, Boolean> allFlights = new HashMap<>();
         allFlights.put("Okęcie", true);
         allFlights.put("Heathrow", false);
@@ -27,21 +27,17 @@ public class FlightFinder {
         allFlights.put("Haneda", true);
         allFlights.put("Sao Paulo-Guarulhos", false);
 
-
-
-        Map<String, Boolean> availableFlights = new HashMap<>();
-
-        for (Map.Entry<String, Boolean> flights : allFlights.entrySet()) {
             String city = flight.getArrivalAirport();
             if (allFlights.containsKey(city)) {
-                allFlights.get(city);
-                availableFlights.put(flights.getKey(), flights.getValue());
+                return allFlights.get(city);
             } else {
                 throw new RouteNotFoundException();
             }
-            }
-            return availableFlights;
         }
+
     }
+
+
+
 
 
