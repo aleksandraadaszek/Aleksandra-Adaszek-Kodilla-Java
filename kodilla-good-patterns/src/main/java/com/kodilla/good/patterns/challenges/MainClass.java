@@ -4,19 +4,19 @@ package com.kodilla.good.patterns.challenges;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.joining;
 
 public class MainClass {
 
 
-    public static void Main(String[] args)  {
+    public static void main(String[] args)  {
 
         MovieStore movieStore = new MovieStore();
-        Map<String, List<String>> theResultStringOfMovies;
-        theResultStringOfMovies = movieStore.getMovies().stream()
-                .collect(Collectors.toMap());
-
-        theResultStringOfMovies.entrySet().stream()
-                .map(entry -> getValue())
+        String theResultStringOfMovies;
+        theResultStringOfMovies = movieStore.getMovies().entrySet().stream()
+                .flatMap(movie -> movie.getValue().stream())
                 .collect(Collectors.joining(",\n", "", ""));
 
                 System.out.println(theResultStringOfMovies);
