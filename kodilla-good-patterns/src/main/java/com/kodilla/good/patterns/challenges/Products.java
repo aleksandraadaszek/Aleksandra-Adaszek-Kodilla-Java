@@ -4,15 +4,15 @@ public class Products {
 
     private String name;
     private int amount;
-    private int price;
+    private double price;
 
-    public Products(String name, int amount, int price) {
+    public Products(String name, int amount, double price) {
         this.name = name;
         this.amount = amount;
         this.price = price;
     }
 
-    public int calculateFinalPrice() {
+    public double calculateFinalPrice() {
         return amount * price;
 
     }
@@ -25,7 +25,7 @@ public class Products {
         return amount;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 }
