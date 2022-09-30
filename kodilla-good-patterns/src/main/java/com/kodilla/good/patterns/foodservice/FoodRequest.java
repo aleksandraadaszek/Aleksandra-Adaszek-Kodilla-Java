@@ -5,18 +5,18 @@ import java.time.LocalDateTime;
 
 public class FoodRequest {
 
-    private Producers producers;
+    private FoodProducer name;
     private LocalDateTime dateOfOrder;
     private Food food;
 
-    public FoodRequest(Producers producers, LocalDateTime dateOfOrder, Food food) {
-        this.producers = producers;
+    public FoodRequest(FoodProducer name, LocalDateTime dateOfOrder, Food food) {
+        this.name = name;
         this.dateOfOrder = dateOfOrder;
         this.food = food;
     }
 
-    public Producers getProducers() {
-        return producers;
+    public FoodProducer getName() {
+        return name;
     }
 
     public LocalDateTime getDateOfOrder() {

@@ -9,7 +9,7 @@ public class Application {
      FoodRequestRetriever foodRequestRetriever = new FoodRequestRetriever();
      FoodRequest foodRequest = foodRequestRetriever.retrieveFoodData();
 
-     BusinessPartners businessPartners = new BusinessPartners();
-     businessPartners.processOrders(foodRequest);
+     FoodOrderService foodOrderService = new FoodOrderService();
+     foodOrderService.processOrders(foodRequest);
     }
 }

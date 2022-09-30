@@ -2,19 +2,20 @@ package com.kodilla.good.patterns.foodservice;
 
 
 
-public class HealthyShop implements FoodProducer {
+
+public class GlutenFreeShop  implements FoodProducer {
 
     String name;
     FoodRequest foodRequest;
 
-    public HealthyShop (FoodRequest foodRequest, String name) {
+    public GlutenFreeShop (FoodRequest foodRequest, String name) {
         this.foodRequest = foodRequest;
         this.name = name;
     }
 
     public void process (FoodRequest foodRequest) {
         FoodOrderService foodOrderService = new FoodOrderService();
-        foodOrderService.soldFood("Healthy Shop",foodRequest.getFood(),foodRequest.getDateOfOrder());
+        foodOrderService.soldFood("Gluten Free Shop",foodRequest.getFood(),foodRequest.getDateOfOrder());
     }
 
     public FoodRequest getFoodRequest () {
@@ -24,4 +25,6 @@ public class HealthyShop implements FoodProducer {
         return name;
     }
 }
+
+
 
