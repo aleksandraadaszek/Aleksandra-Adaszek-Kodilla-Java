@@ -8,12 +8,12 @@ public class FoodOrderService {
 
     public void processOrders(FoodRequest foodRequest) {
         FoodProducer foodProducer = null;
-        if (foodRequest.getName().equals("Healthy Shop")) {
-            foodProducer = new HealthyShop(foodRequest, "Healthy Shop");
-        } else if (foodRequest.getName().equals("Gluten Free Shop")) {
-            foodProducer = new GlutenFreeShop(foodRequest, "Gluten Free Shop");
+        if (foodRequest.getProducerName().equals("Healthy Shop")) {
+            foodProducer = new HealthyShop(foodRequest);
+        } else if (foodRequest.getProducerName().equals("Gluten Free Shop")) {
+            foodProducer = new GlutenFreeShop(foodRequest);
         } else {
-            foodProducer = new ExtraFoodShop(foodRequest, "Extra Food Shop");
+            foodProducer = new ExtraFoodShop(foodRequest);
         }
         foodProducer.process(foodRequest);
     }
@@ -23,6 +23,5 @@ public class FoodOrderService {
                 food.getAmount() + " " + "of " + food.getName() + " " + "for " +
                 food.getPrice() + " " + "each, and so the total price is: " + food.calculateFinalPrice());
         return true;
-
     }
 }
