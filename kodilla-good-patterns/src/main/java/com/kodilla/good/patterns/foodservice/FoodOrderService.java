@@ -19,7 +19,7 @@ public class FoodOrderService {
     }
 
     public boolean soldFood(String name, Food food, LocalDateTime dateOfOrder) {
-        System.out.println("On " + dateOfOrder.toString() + " " + name + " " + "sold: " +
+        System.out.println("On " + dateOfOrder.getDayOfMonth() + ":" + dateOfOrder.getMonth() + " " + dateOfOrder.getYear() + " " + name + " " + "sold: " +
                 food.getAmount() + " " + "of " + food.getName() + " " + "for " +
                 food.getPrice() + " " + "each, and so the total price is: " + food.calculateFinalPrice());
         return true;

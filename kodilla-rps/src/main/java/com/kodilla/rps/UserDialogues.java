@@ -8,7 +8,7 @@ public class UserDialogues {
 
     public String userName() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Jak Ci na imię?");git
+        System.out.println("Jak Ci na imię?");
         String userName = scan.nextLine();
 
         System.out.println("Zmierzmy się " + userName + "!");
@@ -36,30 +36,17 @@ public class UserDialogues {
         System.out.println("Powodzenia :)!");
 
     }
-
-    public String enterUserChoice() {
-
-        RpsProcessor rps = new RpsProcessor();
-
-        Scanner scanner = new Scanner(System.in);
-        String userChoice = scanner.nextLine();
-        if (userChoice == "n")
-            System.out.println("Czy na pewno zakończyć aktualną grę i rozpocząć nową rozgrywkę?");
-        String userFinalChoice = scanner.nextLine();
-        if (userFinalChoice == "n")
-            return userChoice = userFinalChoice;
-        if (userChoice == "z")
-            rps.processGame();
-        if (userChoice == "x")
-            System.out.println("Czy na pewno zamknąć grę?");
-        String userFinalChoice2 = scanner.nextLine();
-        if (userChoice == "x")
-            return userChoice = userFinalChoice2;
-        if (userChoice == "z")
-            rps.processGame();
-
-        return userChoice;
-    }
+        public String getUserChoice() {
+            Scanner sc = new Scanner(System.in);
+            while (true) {
+                System.out.println("Enter your choice:");
+                String s = sc.nextLine();
+                if ("123nxab".contains(s)) {
+                    return s;
+                }
+                System.out.println("Wrong choice, try again");
+            }
+        }
 
     public int enteringUserMove() {
         Scanner scan = new Scanner(System.in);

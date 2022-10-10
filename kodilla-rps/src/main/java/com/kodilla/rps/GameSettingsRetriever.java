@@ -10,6 +10,6 @@ public class GameSettingsRetriever {
         String userName = userDialogues.userName();
         int numberOfRounds = userDialogues.selectNumberOfRounds();
 
-        return new GameSettings(userName,numberOfRounds);
+        return new GameSettings(userName, numberOfRounds);
     }
 }

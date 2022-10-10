@@ -20,6 +20,7 @@ public class FoodRequest {
     }
 
     public LocalDateTime getDateOfOrder() {
+
         return dateOfOrder;
     }
 
@@ -27,7 +28,10 @@ public class FoodRequest {
         return food;
     }
 
+
+
+
     public String toString () {
-        return producerName + " " + dateOfOrder + " " + food + ".";
+        return producerName + " " + dateOfOrder.getDayOfMonth() + ":" + dateOfOrder.getMonth() + " " + dateOfOrder.getYear() + " " +  food + ".";
     }
 }
