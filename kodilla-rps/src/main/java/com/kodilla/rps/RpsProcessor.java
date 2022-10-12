@@ -39,15 +39,15 @@ public class RpsProcessor {
             while (gameInProgress && computerScore < numberOfRounds && userScore < numberOfRounds) {
                 String userMove = userDialogues.getUserChoice();
                 Random randomGenerator = new Random();
-                int computerMove = randomGenerator.nextInt(3) + 1;
+                int computerMove = randomGenerator.nextInt(5) + 1;
+
                 if (userMove.equals("n")) {
                     System.out.println("Potwierdź swój wybór.");
                     userMove = userDialogues.getUserChoice();
                     if (userMove.equals("a")) {
                         gameInProgress = false;
                     }
-                }
-                else if (userMove.equals("x")) {
+                } else if (userMove.equals("x")) {
                     System.out.println("Potwierdź swój wybór.");
                     userMove = userDialogues.getUserChoice();
                     if (userMove.equals("a")) {
@@ -55,107 +55,42 @@ public class RpsProcessor {
                         end = false;
                     }
                 } else if (((userMove.equals("1")) && (computerMove == 3)) ||
-                ((userMove.equals("2")) && (computerMove == 1)) ||
-                ((userMove.equals("3")) && (computerMove == 2))) {
-                        userScore++;
+                        ((userMove.equals("1")) && (computerMove == 4)) ||
+                        ((userMove.equals("2")) && (computerMove == 1)) ||
+                        ((userMove.equals("2")) && (computerMove == 5)) ||
+                        ((userMove.equals("3")) && (computerMove == 2)) ||
+                        ((userMove.equals("3")) && (computerMove == 4))) {
+                    userScore++;
 
                 } else if (((userMove.equals("2")) && (computerMove == 3)) ||
+                        ((userMove.equals("2")) && (computerMove == 4)) ||
                         ((userMove.equals("3")) && (computerMove == 1)) ||
+                        ((userMove.equals("3")) && (computerMove == 5)) ||
+                        ((userMove.equals("1")) && (computerMove == 5)) ||
                         ((userMove.equals("1")) && (computerMove == 2))) {
                     computerScore++;
 
-                }else{
-                    System.out.println("Remis!"); }
+                } else {
+                    System.out.println("Remis!");
+                }
 
-                        System.out.println("Po tej rundzie wynik jest następujący: ");
-                        System.out.println(name + " : " + userScore + "komputer: " + computerScore + ".");
-                    }
+                System.out.println("Po tej rundzie wynik jest następujący: ");
+                System.out.println(name + " : " + userScore + "komputer: " + computerScore + ".");
+            }
 
             if (computerScore < numberOfRounds || userScore < numberOfRounds) {
                 System.out.println("Koniec rozgrywki!");
                 end = false;
             }
-                }
-            }
+        }
+    }
 
 
-//    public void run() {
-//
-//        GameSettingsRetriever gameSettingsRetriever = new GameSettingsRetriever();
-//        GameSettings gameSettings = gameSettingsRetriever.retrieveGameSettings();
-//
-//        RpsProcessor rps = new RpsProcessor();
-//        rps.initialSteps();
-//
-//
-//
-//        boolean end = false;
-//        while (!end) {
-//
-//            UserDialogues userDialogues = new UserDialogues();
-//
-//            String name = gameSettings.getUserName();
-//            int numberOfRounds = userDialogues.selectNumberOfRounds();
-//            roundNumber++;
-//
-//
-//            boolean gameInProgress = true;
-//            while (gameInProgress && roundNumber <= numberOfRounds) {
-//                String userSelection = userDialogues.getUserChoice();
-//                if (userSelection.equals("n"))
-//                    return;
-//                if (userSelection.equals("x"))
-//                    gameInProgress = false;
-//
-//                int userMove = userDialogues.enteringUserMove();
-//
-//                Random randomGenerator = new Random();
-//                int computerMove = randomGenerator.nextInt(3)+1;
-//                for (int n = 0; n < numberOfRounds; n++) {
-//                    if (userMove == 1 && computerMove == 1) {
-//                        userScore++;
-//                        computerScore++;
-//                    } else if (userMove.equals("2") && computerMove == 2) {
-//                        userScore++;
-//                        computerScore++;
-//                    } else if (userMove == 3 && computerMove == 3) {
-//                        userScore++;
-//                        computerScore++;
-//                    } else if (userMove == 1 && computerMove == 2) {
-//                        computerScore++;
-//                    } else if (userMove == 1 && computerMove == 3) {
-//                        userScore++;
-//                    } else if (userMove == 2 && computerMove == 1) {
-//                        userScore++;
-//                    } else if (userMove == 2 && computerMove == 3) {
-//                        computerMove++;
-//                    } else if (userMove == 3 && computerMove == 1) {
-//                        computerScore++;
-//                    } else if (userMove == 3 && computerMove == 2) {
-//                        userScore++;
-//                        System.out.println("Po tej rundzie wynik jest następujący: ");
-//                        System.out.println(name + " : " + userScore + "komputer: " + computerScore + ".");
-//                    }
-//
-//                }
-//                userDialogues.displayStatistics();
-//                userDialogues.getUserChoice();
-//            }
-//        }
-//    }
-
-    public static int getUserScore () {
+    public static int getUserScore() {
         return userScore;
     }
 
-    public static int getComputerScore () {
+    public static int getComputerScore() {
         return computerScore;
     }
-            }
-
-
-
-
-//
-
-
+}

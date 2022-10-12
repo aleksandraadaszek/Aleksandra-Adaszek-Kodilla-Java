@@ -1,6 +1,9 @@
 package com.kodilla.rps;
 
 
+import javax.sound.midi.Soundbank;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class UserDialogues {
@@ -29,10 +32,12 @@ public class UserDialogues {
         System.out.println("\"kamień\",  naciśnij 1,");
         System.out.println("\"papier\", naciśnij 2,");
         System.out.println("\"nożyczki\", naciśnij 3,");
+        System.out.println("\"jaszczurka\", naciśnij 4,");
+        System.out.println("\"spock\", naciśnij 5,");
         System.out.println("zakończenie gry, naciśnij x,");
         System.out.println("uruchomienie gry od nowa, naciśnij \"n\".");
-        System.out.println("potwierdzenie wyboru, naciśnij ponownie \"n\" lub \"x\".");
-        System.out.println("anulowanie wyboru, naciśnij klawisz \"z\".");
+        System.out.println("potwierdzenie wyboru, naciśnij ponownie \"a\" .");
+        System.out.println("anulowanie wyboru, naciśnij klawisz \"b\".");
         System.out.println("Powodzenia :)!");
 
     }
@@ -41,7 +46,7 @@ public class UserDialogues {
             while (true) {
                 System.out.println("Enter your choice:");
                 String s = sc.nextLine();
-                if ("123nxab".contains(s)) {
+                if ("12345nxab".contains(s)) {
                     return s;
                 }
                 System.out.println("Wrong choice, try again");

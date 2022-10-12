@@ -8,6 +8,6 @@ public class RpsRunner {
 
         RpsProcessor rpsProcessor = new RpsProcessor();
 
-        rpsProcessor.processGame();
-    }
+      rpsProcessor.processGame();
+  }
 }
