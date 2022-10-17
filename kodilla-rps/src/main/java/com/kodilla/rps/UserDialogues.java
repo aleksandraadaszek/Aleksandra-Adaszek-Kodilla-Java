@@ -82,5 +82,18 @@ public class UserDialogues {
             System.out.println("Zwycięzcą tej rozgrywki jest komputer.");
         }
     }
+
+    public String showingChoices (int choice) {
+        if(choice == 1) {
+            return "kamień";
+        } else if (choice == 2) {
+            return "papier";
+        } else if (choice == 3) {
+            return "nożyczki";
+        } else if (choice == 4) {
+            return "Spock";
+        }
+        return "jaszczurka";
+    }
 }
 

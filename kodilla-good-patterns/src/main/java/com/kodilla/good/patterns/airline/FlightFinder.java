@@ -126,7 +126,6 @@ public class FlightFinder {
 
         }
 
-
         }
         public List<Flight> getAvailableConnections() {
             return new ArrayList<>(availableConnections);
