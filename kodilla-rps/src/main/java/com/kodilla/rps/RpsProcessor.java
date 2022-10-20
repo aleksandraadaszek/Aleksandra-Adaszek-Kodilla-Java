@@ -26,8 +26,8 @@ public class RpsProcessor {
         rps.initialSteps();
 
 
-        boolean end = true;
-        while (end) {
+        boolean running = true;
+        while (running) {
 
             UserDialogues userDialogues = new UserDialogues();
 
@@ -53,7 +53,7 @@ public class RpsProcessor {
                     userMove = userDialogues.getUserChoice();
                     if (userMove.equals("a")) {
                         gameInProgress = false;
-                        end = false;
+                        running = false;
                     }
                 }
                 String showingUserMove = userDialogues.showingChoices(Integer.parseInt(userMove));
@@ -170,7 +170,7 @@ public class RpsProcessor {
 
             if (computerScore < numberOfRounds || userScore < numberOfRounds) {
                 System.out.println("Koniec rozgrywki!");
-                end = false;
+                running = false;
             }
         }
     }
