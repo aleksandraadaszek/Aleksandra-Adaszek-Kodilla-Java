@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.exception.test.SecondChallengeTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-12T18:34:16" hostname="LAPTOP-KFH1FI9C" time="0.04">
+  <properties/>
+  <testcase name="testSecondChallengeAssertionThrows()" classname="com.kodilla.exception.test.SecondChallengeTestSuite" time="0.024"/>
+  <testcase name="testSecondChallengeAssertDoesNotThrow()" classname="com.kodilla.exception.test.SecondChallengeTestSuite" time="0.005"/>
+  <testcase name="testSecondChallengeBoundaryValues()" classname="com.kodilla.exception.test.SecondChallengeTestSuite" time="0.006"/>
+  <system-out><![CDATA[This is the beginning of all tests.
+Preparing to execute test number 1
+Preparing to execute test number 2
+Preparing to execute test number 3
+This is the end of all tests.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

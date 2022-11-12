@@ -20,6 +20,7 @@ public class BoardConfig {
     public TaskList getToDoList () {
         return new TaskList();
     }
+
     @Autowired
     @Qualifier("inProgressList")
     TaskList inProgressList;
