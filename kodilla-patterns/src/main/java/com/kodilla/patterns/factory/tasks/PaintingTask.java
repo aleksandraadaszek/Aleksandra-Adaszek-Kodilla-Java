@@ -9,7 +9,7 @@ public class PaintingTask implements Task{
     private final String taskName;
     private final String colour;
     private final String whatToPaint;
-    private final List<Boolean> theListOfCompletedTasks = new ArrayList<>();
+    private boolean isTaskDone;
 
 
     public PaintingTask(final String taskName, final String colour, final String whatToPaint) {
@@ -23,32 +23,15 @@ public class PaintingTask implements Task{
         return taskName;
     }
 
-    public List<Boolean> getTheListOfCompletedTasks() {
-        return theListOfCompletedTasks;
-    }
-
     @Override
-    public List<Boolean> executeTask() {
+    public void executeTask() {
          System.out.println("Completing the current task...");
-         boolean result = true;
-         theListOfCompletedTasks.add(result);
-         return theListOfCompletedTasks;
+         isTaskDone = true;
          }
-
 
     @Override
     public boolean isTaskExecuted() {
-        System.out.println("Checking if the current painting task has already been completed...");
-        Boolean task = theListOfCompletedTasks.get(0);
-        boolean result = false;
-        if (theListOfCompletedTasks.contains(task)) {
-            result = true;
-            System.out.println("This painting task has been successfully completed.");
-        }else {
-            result = false;
-            System.out.println("This task still awaits its completion");
-        }
-            return result;
+            return isTaskDone;
         }
     }
 

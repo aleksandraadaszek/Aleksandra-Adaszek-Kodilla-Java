@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Task {
 
-    public List<Boolean> executeTask();
+    public void executeTask();
     public String getTaskName();
     public boolean isTaskExecuted();
 }

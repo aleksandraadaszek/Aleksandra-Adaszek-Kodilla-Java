@@ -19,10 +19,10 @@ public class TaskFactoryTestSuite {
 
         //When
         Task shoppingTask = factory.prepareAndVerifyATask(TaskFactory.SHOPPINGTASK);
+        shoppingTask.executeTask();
 
         //Then
         assertEquals("Buying notebooks", shoppingTask.getTaskName());
-        assertEquals(1, shoppingTask.executeTask().size());
         assertTrue(shoppingTask.isTaskExecuted());
     }
 
@@ -33,10 +33,10 @@ public class TaskFactoryTestSuite {
 
         //When
         Task paintingTask = factory.prepareAndVerifyATask(TaskFactory.PAINTINGTASK);
+        paintingTask.executeTask();
 
         //Then
         assertEquals("Painting the living room", paintingTask.getTaskName());
-        assertEquals(1,paintingTask.executeTask().size());
         assertTrue(paintingTask.isTaskExecuted());
     }
 
@@ -47,10 +47,10 @@ public class TaskFactoryTestSuite {
 
         //When
         Task drivingTask = factory.prepareAndVerifyATask(TaskFactory.DRIVINGTASK);
+        drivingTask.executeTask();
 
         //Then
         assertEquals("Delivering parcels",drivingTask.getTaskName());
-        assertEquals(1, drivingTask.executeTask().size());
         assertTrue(drivingTask.isTaskExecuted());
     }
 }

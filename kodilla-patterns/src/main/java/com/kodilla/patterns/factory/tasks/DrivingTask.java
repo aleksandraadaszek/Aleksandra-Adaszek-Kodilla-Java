@@ -9,7 +9,7 @@ public class DrivingTask implements Task{
     private final String taskName;
     private final String where;
     private final String using;
-    private final List<Boolean> theListOfCompletedTasks = new ArrayList<>();
+    private boolean isTaskDone;
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
@@ -22,31 +22,16 @@ public class DrivingTask implements Task{
         return taskName;
     }
 
-    public List<Boolean> getTheListOfCompletedTasks() {
-        return theListOfCompletedTasks;
-    }
 
     @Override
-    public List<Boolean> executeTask() {
+    public void executeTask() {
         System.out.println("Completing the current task...");
-        boolean result = true;
-        theListOfCompletedTasks.add(result);
-        return theListOfCompletedTasks;
+        isTaskDone = true;
     }
 
     @Override
     public boolean isTaskExecuted() {
-        System.out.println("Checking if the current driving task has already been completed...");
-        Boolean task = theListOfCompletedTasks.get(0);
-        boolean result = false;
-        if(theListOfCompletedTasks.contains(task)) {
-            result=true;
-            System.out.println("The task has been completed.");
-        }else{
-            result=false;
-            System.out.println("This task has not been completed yet.");
-        }
-        return result;
+        return isTaskDone;
     }
 
 }
