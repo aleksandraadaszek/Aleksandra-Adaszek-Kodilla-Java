@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests for the first method in the BookLibrary class" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-12T19:28:17" hostname="LAPTOP-KFH1FI9C" time="0.018">
+  <properties/>
+  <testcase name="testBooksWithConditionsReturnList()" classname="com.kodilla.testing.library.BookDirectoryTestSuite$TestMethodBooksWithConditions" time="0.002"/>
+  <testcase name="testBooksWithConditionMoreThan20()" classname="com.kodilla.testing.library.BookDirectoryTestSuite$TestMethodBooksWithConditions" time="0.005"/>
+  <testcase name="testBooksWithConditionFragmentShorterThan3()" classname="com.kodilla.testing.library.BookDirectoryTestSuite$TestMethodBooksWithConditions" time="0.009"/>
+  <system-out><![CDATA[Preparing to execute test #4
+Preparing to execute test #5
+Preparing to execute test #6
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

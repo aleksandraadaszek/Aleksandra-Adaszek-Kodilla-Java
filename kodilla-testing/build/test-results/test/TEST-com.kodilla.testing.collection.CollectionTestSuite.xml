@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Collection Test Suite" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-11-12T19:28:16" hostname="LAPTOP-KFH1FI9C" time="0.03">
+  <properties/>
+  <testcase name="testEmptyList()" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.027"/>
+  <testcase name="testEvenNumbersList()" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.002"/>
+  <system-out><![CDATA[This is the beginning of tests.
+Preparing to execute test #1
+Preparing to execute test #2
+All tests are finished.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Testing calculating advanced statistics" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-11-12T19:28:17" hostname="LAPTOP-KFH1FI9C" time="0.095">
+  <properties/>
+  <testcase name="testForumStatisticsWith0Posts()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.031"/>
+  <testcase name="testForumStatisticsWith0Users()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.004"/>
+  <testcase name="testForumStatisticsWithMoreCommentsThanPosts()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.009"/>
+  <testcase name="testForumStatisticsWith1000Posts()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.006"/>
+  <testcase name="testForumStatisticsWith100Users()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.033"/>
+  <testcase name="testForumStatisticsWithMorePostsThanComments()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.003"/>
+  <testcase name="testForumStatisticsWith0Comments()" classname="com.kodilla.testing.statistics.ForumStatisticsTestSuite" time="0.004"/>
+  <system-out><![CDATA[This is the beginning of all tests
+Preparing to execute test #7
+Preparing to execute test #8
+Preparing to execute test #9
+Preparing to execute test #10
+Preparing to execute test #11
+Preparing to execute test #12
+Preparing to execute test #13
+This is the end of all tests
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
