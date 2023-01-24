@@ -1,0 +1,61 @@
+CREATE TABLE ISSUESLISTS (
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(100)
+);
+
+CREATE TABLE ISSUES (
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY(ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    SUMMARY VARCHAR (200),
+    DESCRIPTION VARCHAR(1024),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+show TABLES;
+
+COMMIT;
+
+INSERT INTO ISSUESLISTS(ID, NAME) VALUES (1,"ToDo");
+INSERT INTO ISSUESLISTS(ID, NAME) VALUES (2,"InProgress");
+INSERT INTO ISSUESLISTS(ID, NAME) VALUES (3,"Done");
+SELECT*from ISSUESLISTS;
+SELECT*from ISSUES;
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(1,"Design classes' connections", "Deciding which design patterns best suit the project.",3);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(1,"Consulting teams", "Consulting other teams working on the project.", 4);
+INSERT INTO ISSUES(issueslist_id, summary, description, user_id_assignedto)
+VALUES(1, "Writing tests", "Preparing some end to ends tests.", 5);
+SELECT*from ISSUES;
+INSERT INTO ISSUES(ISSUESlIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(1,"Finding a solution", "Finding a solution to the problem of memory issues.", 5);
+INSERT INTO ISSUES(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(1,"Finding bugs", "Marking all found bugs in the code", 1);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(1,"Designing frontend layer", "Coordinating frontedn and backend teams",2);
+SELECT*from ISSUES;
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(2,"Preparing stubs", "Designing stubs for all SUT clasess.", 4);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(2,"Phyton to Java", "Adapting the phyton code into a Java solution.", 1);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(2,"Finding bugs", "Marking all found bugs in the code", 1);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(2,"Writing tests", "Preparing some end to ends tests.", 5);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(2, "Testing exceptions", "Testing for exceptions handling and adding necessary improvments.", 3);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(3,"Design classes' connections", "Deciding which design patterns best suit the project.",3);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(3,"Writing tests", "Preparing some end to ends tests.", 2);
+INSERT INTO ISSUES(ISSUESlIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(3,"Finding a solution", "Finding a solution to the problem of memory issues.", 4);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(3,"Preparing stubs", "Designing stubs for all SUT clasess.", 2);
+INSERT INTO ISSUES(ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES(3,"Design classes' connections", "Deciding which design patterns best suit the project.",1);
+COMMIT;
+
+
