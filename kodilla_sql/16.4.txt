@@ -1,4 +1,6 @@
-1.Listę zadań z tabeli ISSUESS
+ZADANIE 16.4.
+
+1.Listę zadań z tabeli ISSUESS 
 z dołączonymi do nich nazwami list zadań z tabeli ISSUESLISTS:
 
 SELECT I.ID,I.SUMMARY,L.NAME
