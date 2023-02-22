@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.social.UserTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-02-20T18:45:33" hostname="LAPTOP-KFH1FI9C" time="0.008">
+  <properties/>
+  <testcase name="testDefaultSharingStrategies()" classname="com.kodilla.patterns2.social.UserTestSuite" time="0.005"/>
+  <testcase name="testIndividualSharingStrategy()" classname="com.kodilla.patterns2.social.UserTestSuite" time="0.002"/>
+  <system-out><![CDATA[A Snapchat user shares: Using Snapchat
+A Twitter user shares: Using Twitter
+A facebook user shares: Using Facebook
+A Twitter user shares: Using Twitter
+A former Twitter use now shares: Using Facebook
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

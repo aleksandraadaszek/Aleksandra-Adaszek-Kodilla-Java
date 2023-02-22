@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.prototype.BoardTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-20T18:45:33" hostname="LAPTOP-KFH1FI9C" time="0.033">
+  <properties/>
+  <testcase name="testToString()" classname="com.kodilla.patterns2.prototype.BoardTestSuite" time="0.033"/>
+  <system-out><![CDATA[Board [Project number1]
+  List [Completed tasks].
+  Task[An already completed task number: 1].
+  Task[An already completed task number: 2].
+  Task[An already completed task number: 3].
+  Task[An already completed task number: 4].
+  Task[An already completed task number: 5].
+  Task[An already completed task number: 6].
+  Task[An already completed task number: 7].
+  Task[An already completed task number: 8].
+  Task[An already completed task number: 9].
+  Task[An already completed task number: 10].  List [In progress tasks].
+  Task[In progress task number: 1].
+  Task[In progress task number: 2].
+  Task[In progress task number: 3].
+  Task[In progress task number: 4].
+  Task[In progress task number: 5].
+  Task[In progress task number: 6].
+  Task[In progress task number: 7].
+  Task[In progress task number: 8].
+  Task[In progress task number: 9].
+  Task[In progress task number: 10].
+Board [Project number 2]
+  List [Completed tasks].
+  Task[An already completed task number: 1].
+  Task[An already completed task number: 2].
+  Task[An already completed task number: 3].
+  Task[An already completed task number: 4].
+  Task[An already completed task number: 5].
+  Task[An already completed task number: 6].
+  Task[An already completed task number: 7].
+  Task[An already completed task number: 8].
+  Task[An already completed task number: 9].
+  Task[An already completed task number: 10].  List [In progress tasks].
+  Task[In progress task number: 1].
+  Task[In progress task number: 2].
+  Task[In progress task number: 3].
+  Task[In progress task number: 4].
+  Task[In progress task number: 5].
+  Task[In progress task number: 6].
+  Task[In progress task number: 7].
+  Task[In progress task number: 8].
+  Task[In progress task number: 9].
+  Task[In progress task number: 10].
+Board [Project number 3]
+  List [To do tasks].
+  Task[To do task number: 1].
+  Task[To do task number: 2].
+  Task[To do task number: 3].
+  Task[To do task number: 4].
+  Task[To do task number: 5].
+  Task[To do task number: 6].
+  Task[To do task number: 7].
+  Task[To do task number: 8].
+  Task[To do task number: 9].
+  Task[To do task number: 10].  List [Completed tasks].
+  Task[An already completed task number: 1].
+  Task[An already completed task number: 2].
+  Task[An already completed task number: 3].
+  Task[An already completed task number: 4].
+  Task[An already completed task number: 5].
+  Task[An already completed task number: 6].
+  Task[An already completed task number: 7].
+  Task[An already completed task number: 8].
+  Task[An already completed task number: 9].
+  Task[An already completed task number: 10].  List [In progress tasks].
+  Task[In progress task number: 1].
+  Task[In progress task number: 2].
+  Task[In progress task number: 3].
+  Task[In progress task number: 4].
+  Task[In progress task number: 5].
+  Task[In progress task number: 6].
+  Task[In progress task number: 7].
+  Task[In progress task number: 8].
+  Task[In progress task number: 9].
+  Task[In progress task number: 10].
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

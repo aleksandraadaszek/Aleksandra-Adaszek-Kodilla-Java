@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-20T18:45:32" hostname="LAPTOP-KFH1FI9C" time="0.138">
+  <properties/>
+  <testcase name="testGetBooks()" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.138"/>
+  <system-out><![CDATA[The collection of books: [ Collection 1 ].
+Book{ title: title2, author: author2, the year of publication: 2002-04-07 }.Book{ title: title7, author: author7, the year of publication: 2007-09-07 }.Book{ title: title4, author: author4, the year of publication: 2004-06-07 }.Book{ title: title9, author: author9, the year of publication: 2009-11-07 }.Book{ title: title3, author: author3, the year of publication: 2003-05-07 }.Book{ title: title0, author: author0, the year of publication: 2000-02-07 }.Book{ title: title6, author: author6, the year of publication: 2006-08-07 }.Book{ title: title8, author: author8, the year of publication: 2008-10-07 }.Book{ title: title5, author: author5, the year of publication: 2005-07-07 }.
+The collection of books: [ Collection 2 ].
+Book{ title: title2, author: author2, the year of publication: 2002-04-07 }.Book{ title: title7, author: author7, the year of publication: 2007-09-07 }.Book{ title: title4, author: author4, the year of publication: 2004-06-07 }.Book{ title: title9, author: author9, the year of publication: 2009-11-07 }.Book{ title: title3, author: author3, the year of publication: 2003-05-07 }.Book{ title: title0, author: author0, the year of publication: 2000-02-07 }.Book{ title: title6, author: author6, the year of publication: 2006-08-07 }.Book{ title: title8, author: author8, the year of publication: 2008-10-07 }.Book{ title: title5, author: author5, the year of publication: 2005-07-07 }.
+The collection of books: [ Collection 3 ].
+Book{ title: title9, author: author9, the year of publication: 2009-11-07 }.Book{ title: title2, author: author2, the year of publication: 2002-04-07 }.Book{ title: title5, author: author5, the year of publication: 2005-07-07 }.Book{ title: title3, author: author3, the year of publication: 2003-05-07 }.Book{ title: title4, author: author4, the year of publication: 2004-06-07 }.Book{ title: title6, author: author6, the year of publication: 2006-08-07 }.Book{ title: title1, author: author1, the year of publication: 2001-03-07 }.Book{ title: title7, author: author7, the year of publication: 2007-09-07 }.Book{ title: title8, author: author8, the year of publication: 2008-10-07 }.Book{ title: title0, author: author0, the year of publication: 2000-02-07 }.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

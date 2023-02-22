@@ -10,4 +10,6 @@ include 'kodilla-spring-web'
 include 'kodilla-patterns'
 include 'kodilla-patterns'
 include 'kodilla_sql'
+include 'kodilla-jdbc'
+
 

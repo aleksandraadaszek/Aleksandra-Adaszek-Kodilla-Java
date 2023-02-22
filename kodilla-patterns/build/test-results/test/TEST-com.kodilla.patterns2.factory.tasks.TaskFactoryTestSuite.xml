@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.factory.tasks.TaskFactoryTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-02-20T18:45:33" hostname="LAPTOP-KFH1FI9C" time="0.01">
+  <properties/>
+  <testcase name="testFactoryDrivingTest()" classname="com.kodilla.patterns2.factory.tasks.TaskFactoryTestSuite" time="0.003"/>
+  <testcase name="testFactoryPaintingTest()" classname="com.kodilla.patterns2.factory.tasks.TaskFactoryTestSuite" time="0.002"/>
+  <testcase name="testFactoryShoppingTask()" classname="com.kodilla.patterns2.factory.tasks.TaskFactoryTestSuite" time="0.002"/>
+  <system-out><![CDATA[Completing the current task...
+Completing the current task...
+Completing the current task...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
