@@ -29,6 +29,26 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kodilla-hiberante" />
+        <option name="gradleHome" value="C:/Program Files/gradle-7.5" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kodilla-hiberante" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kodilla-hibernate" />
+        <option name="gradleHome" value="C:/Program Files/gradle-7.5" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kodilla-hibernate" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/kodilla-spring" />
         <option name="gradleHome" value="C:/Program Files/gradle-7.5" />
         <option name="modules">

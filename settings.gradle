@@ -13,4 +13,3 @@ include 'kodilla_sql'
 include 'kodilla-jdbc'
 include 'kodilla-hibernate'
 
-
