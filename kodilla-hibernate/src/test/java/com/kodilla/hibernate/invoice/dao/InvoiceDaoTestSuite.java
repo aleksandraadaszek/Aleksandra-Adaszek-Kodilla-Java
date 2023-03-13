@@ -5,18 +5,27 @@ import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
 
     @Autowired
     private InvoiceDao invoiceDao;
+
+    @Autowired
+    private ProductDao productDao;
+
+    @Autowired
+    private ItemDao itemDao;
 
     private static final String NUMBER = "001";
 
@@ -30,10 +39,10 @@ public class InvoiceDaoTestSuite {
         Item item4 = new Item (new BigDecimal(523),12,new BigDecimal(6276));
         Product product1 = new Product("wooden bench");
         //Product product2 = new Product("wooden table");
-        product1.getItems().add(item1);
-        product1.getItems().add(item2);
-        product1.getItems().add(item3);
-        product1.getItems().add(item4);
+//        product1.getItems().add(item1);
+//        product1.getItems().add(item2);
+//        product1.getItems().add(item3);
+//        product1.getItems().add(item4);
         item1.setProduct(product1);
         item2.setProduct(product1);
         item3.setProduct(product1);

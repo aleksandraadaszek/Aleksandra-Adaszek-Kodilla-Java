@@ -38,7 +38,9 @@ public class Item {
     public int getId() {
         return id;
     }
-    @ManyToOne
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
     //@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name="PRODUCT_ID")
     public Product getProduct() {
@@ -60,7 +62,10 @@ public class Item {
         return value;
     }
 
-    @ManyToOne
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+
     //@Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @JoinColumn(name="INVOICE_ID")
     public Invoice getInvoice() {
