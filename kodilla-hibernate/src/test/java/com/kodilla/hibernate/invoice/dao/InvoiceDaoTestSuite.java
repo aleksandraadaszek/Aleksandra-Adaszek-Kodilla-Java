@@ -21,12 +21,6 @@ public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
 
-    @Autowired
-    private ProductDao productDao;
-
-    @Autowired
-    private ItemDao itemDao;
-
     private static final String NUMBER = "001";
 
 
@@ -38,17 +32,17 @@ public class InvoiceDaoTestSuite {
         Item item3 = new Item (new BigDecimal(347), 19,new BigDecimal(6593));
         Item item4 = new Item (new BigDecimal(523),12,new BigDecimal(6276));
         Product product1 = new Product("wooden bench");
-        //Product product2 = new Product("wooden table");
-//        product1.getItems().add(item1);
-//        product1.getItems().add(item2);
-//        product1.getItems().add(item3);
-//        product1.getItems().add(item4);
+        Product product2 = new Product("wooden table");
+        product1.getItems().add(item1);
+        product1.getItems().add(item2);
+        product2.getItems().add(item3);
+        product2.getItems().add(item4);
         item1.setProduct(product1);
         item2.setProduct(product1);
-        item3.setProduct(product1);
-        item4.setProduct(product1);
+        item3.setProduct(product2);
+        item4.setProduct(product2);
         Invoice invoice = new Invoice(NUMBER);
-        //Invoice invoice2 = new Invoice("002");
+        Invoice invoice2 = new Invoice("002");
         invoice.getItems().add(item1);
         invoice.getItems().add(item2);
         invoice.getItems().add(item3);
@@ -61,15 +55,15 @@ public class InvoiceDaoTestSuite {
         //When
         invoiceDao.save(invoice);
         int id1 = invoice.getId();
-//        invoiceDao.save(invoice2);
-//        int id2 = invoice2.getId();
+        invoiceDao.save(invoice2);
+        int id2 = invoice2.getId();
 
         //Then
         assertNotEquals(0,id1);
-        //assertNotEquals(0, id2);
+        assertNotEquals(0, id2);
 
         //CleanUp
         invoiceDao.deleteById(id1);
-        //invoiceDao.deleteById(id2);
+        invoiceDao.deleteById(id2);
     }
 }
