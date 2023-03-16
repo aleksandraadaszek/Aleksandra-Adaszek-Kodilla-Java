@@ -16,7 +16,6 @@ public class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
-
     @Autowired
     private EmployeeDao employeeDao;
 
@@ -51,20 +50,23 @@ public class CompanyDaoTestSuite {
         int dataMastersId = dataMasters.getId();
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
+        employeeDao.save(stephanieClarkson);
+        int stephanieClarksonId = stephanieClarkson.getId();
 
         //Then
         assertNotEquals(0, softwareMachineId);
         assertNotEquals(0, dataMastersId);
         assertNotEquals(0, greyMatterId);
+        assertNotEquals(0, stephanieClarksonId);
 
         //CleanUp
-            try{
-                companyDao.deleteById(softwareMachineId);
-                companyDao.deleteById(dataMastersId);
-                companyDao.deleteById(greyMatterId);
-        }catch(Exception e){
-                System.out.println("The exception " + e + " has been caught.");
-            }
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMastersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            System.out.println("The exception " + e + " has been caught.");
+        }
     }
 
     @Test
@@ -76,7 +78,7 @@ public class CompanyDaoTestSuite {
         Employee john = new Employee("John", "Stringfield");
 
         Company rockingScience = new Company("Rocking Science");
-        Company codingMasters = new Company ("Coding Masters");
+        Company codingMasters = new Company("Coding Masters");
         Company outstandingProgramming = new Company("Outstanding Programming");
         Company codeExcellence = new Company("Code Excellence");
 
@@ -117,24 +119,33 @@ public class CompanyDaoTestSuite {
         int johnId = john.getId();
 
         //When
-        List<Company> companiesStartingWithSpecificCharacters = companyDao.retrieveFirstThreeSpecificLettersOfACompanyName();
+        List<Company> companiesStartingWithSpecificCharacters = companyDao.retrieveFirstThreeSpecificLettersOfACompanyName("Cod");
         List<Employee> employeesWithASpecificLastname = employeeDao.retrieveEmployeesWithASpecificLastname("Stringfield");
 
         //Then
-        try{
-            assertEquals(2,companiesStartingWithSpecificCharacters.size());
-            assertEquals(2,employeesWithASpecificLastname.size());
-        }finally{
+        assertEquals(2, companiesStartingWithSpecificCharacters.size());
+        assertEquals(2, employeesWithASpecificLastname.size());
+        try {
             //CleanUp
-            companyDao.deleteById(rockingScienceId);
-            companyDao.deleteById(codingMastersId);
-            companyDao.deleteById(outstandingProgrammingId);
-            companyDao.deleteById(codeExcellenceId);
+            deleteCompanies(rockingScienceId, codingMastersId, outstandingProgrammingId, codeExcellenceId);
             employeeDao.deleteById(anittaId);
             employeeDao.deleteById(bradId);
             employeeDao.deleteById(elizabethId);
             employeeDao.deleteById(johnId);
+        } catch (Exception e) {
+            System.out.println("The exception " + e + " has been caught.");
         }
     }
 
+    private void deleteCompanies(int... ids) {
+        for (int id : ids) {
+            try {
+                companyDao.deleteById(id);
+            } catch (Exception e) {
+                System.out.println("The exception" + e);
+            }
+        }
     }
+}
+
+

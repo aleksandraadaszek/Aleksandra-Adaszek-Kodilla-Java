@@ -8,7 +8,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveFirstThreeSpecificLettersOfACompanyName",
-        query = "SELECT * FROM companies WHERE company_name LIKE 'cod%'",
+        query = "SELECT * FROM companies WHERE SUBSTRING(company_name, 1,3)= :arg",
         resultClass = Company.class
 )
 
@@ -18,7 +18,6 @@ public class Company {
 
     private int id;
     private String name;
-
     private List<Employee> employees = new ArrayList<>();
 
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 @NamedQuery(
         name = "Employee.retrieveEmployeesWithASpecificLastname",
-        query = "FROM Employee WHERE lastname > : LASTNAME"
+        query = "FROM Employee WHERE lastname =:LASTNAME"
 )
 
 @Entity
